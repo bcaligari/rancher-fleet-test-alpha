@@ -22,3 +22,22 @@ spec:
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: omega
+  name: omega
+  namespace: alphaverse
+spec:
+  containers:
+  - name: omega
+    args:
+    - /bin/tail
+    - -f
+    - /dev/null
+    image: busybox
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
